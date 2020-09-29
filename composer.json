@@ -1,0 +1,22 @@
+{
+    "name": "asmsoft/retrofit-php-converter-jsonmapper",
+    "description": "Retrofit PHP converter using JsonMapper",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alex S. Marinenko",
+            "email": "alex.marinenko@gmail.com"
+        }
+    ],
+    "require": {
+        "netresearch/jsonmapper": "^3.1",
+        "tebru/retrofit-php": "dev-master",
+        "ext-json": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Asmsoft\\RetrofitConverter\\JsonMapper\\": "src/"
+        }
+    }
+}
