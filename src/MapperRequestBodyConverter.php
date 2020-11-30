@@ -2,6 +2,7 @@
 
 namespace Asmsoft\RetrofitConverter\JsonMapper;
 
+use GuzzleHttp\Psr7\BufferStream;
 use Psr\Http\Message\StreamInterface;
 use Tebru\PhpType\TypeToken;
 use Tebru\Retrofit\RequestBodyConverter;
@@ -39,8 +40,8 @@ class MapperRequestBodyConverter implements RequestBodyConverter
         if ($this->type->isA(StreamInterface::class)) {
             return $value;
         }
-
-        /** @noinspection ExceptionsAnnotatingAndHandlingInspection */
-        return json_encode($value);
+        $result = new BufferStream();
+        $result->write(json_encode($value));
+        return $result;
     }
 }
